@@ -380,7 +380,11 @@ export interface ApiHomeHome extends Schema.CollectionType {
     phone: Attribute.String & Attribute.Required;
     images: Attribute.Media;
     postalcode: Attribute.String & Attribute.Required;
-    user_id: Attribute.Integer & Attribute.Required;
+    users_permissions_user: Attribute.Relation<
+      'api::home.home',
+      'manyToOne',
+      'plugin::users-permissions.user'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -799,6 +803,11 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
       'plugin::users-permissions.user',
       'manyToOne',
       'plugin::users-permissions.role'
+    >;
+    homes: Attribute.Relation<
+      'plugin::users-permissions.user',
+      'oneToMany',
+      'api::home.home'
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;

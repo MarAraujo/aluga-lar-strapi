@@ -12,7 +12,11 @@ module.exports = createCoreController('api::home.home', ({ strapi }) => ({
     let { data } = ctx.request.body
     const files =ctx.request.files
     data = JSON.parse(data)
-    data.user_id = user.id
+    //data.user_id = user.id
+
+    data.users_permissions_user = {
+      connect: [user.id]
+    }
 
     const newReview = await strapi.service('api::home.home').create({
       data: {

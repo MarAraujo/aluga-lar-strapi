@@ -40,9 +40,11 @@
       "type": "string",
       "required": true
     },
-    "user_id": {
-      "type": "integer",
-      "required": true
+    "users_permissions_user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "homes"
     }
   }
 }
