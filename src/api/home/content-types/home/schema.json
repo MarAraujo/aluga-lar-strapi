@@ -36,10 +36,6 @@
         "images"
       ]
     },
-    "postalcode": {
-      "type": "string",
-      "required": true
-    },
     "users_permissions_user": {
       "type": "relation",
       "relation": "manyToOne",

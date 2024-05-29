@@ -379,7 +379,6 @@ export interface ApiHomeHome extends Schema.CollectionType {
     price: Attribute.Decimal & Attribute.Required;
     phone: Attribute.String & Attribute.Required;
     images: Attribute.Media;
-    postalcode: Attribute.String & Attribute.Required;
     users_permissions_user: Attribute.Relation<
       'api::home.home',
       'manyToOne',

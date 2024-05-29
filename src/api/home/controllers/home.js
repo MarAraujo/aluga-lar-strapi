@@ -9,7 +9,9 @@ const { createCoreController } = require('@strapi/strapi').factories;
 module.exports = createCoreController('api::home.home', ({ strapi }) => ({
   async create(ctx) {
     const user = ctx.state.user;
+    // @ts-ignore
     let { data } = ctx.request.body
+    // @ts-ignore
     const files =ctx.request.files
     data = JSON.parse(data)
     //data.user_id = user.id
